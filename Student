@@ -1,0 +1,18 @@
+public class Student1 {
+    private String StudentName ;
+    private String coollegeName ;
+    private int StudentID;
+
+    public static void main(String args[]){
+
+        Student1 obj = new Student1();
+        obj.StudentName = "KIRAN";
+        System.out.println(obj.StudentName);
+        System.out.println("Successful");
+    }
+}
+/*You cannot declare a variable as private inside a static method because access modifiers
+(private, protected, public) only apply to class members, not local variables.*/
+//can we can't declare private in static method
+//Class ke ander private member ko use kiya ja skta hai
+//but dusri class ke private member ko use nahi kiya ja sakta;
