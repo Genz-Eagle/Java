@@ -1,0 +1,24 @@
+package com.anudip.learning
+
+class Employee{
+    protected int id;
+    protected int age;
+    protected String name;
+    protected boolean isPermanent;
+}
+class Person{
+    String name = "Ankita";
+    int age = 20;
+    int salary = 35000;
+}
+
+public class Student {
+    public static void main(String args[]){
+        Employee emp = new Employee();
+        Person people = new Person();
+        emp.age = (int)35.5;
+        System.out.println(emp.age);
+        System.out.println("Successfully started");
+
+    }
+}
