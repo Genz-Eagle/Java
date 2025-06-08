@@ -1,0 +1,35 @@
+package Session3;
+
+public class Car {  //Declaring class
+//    Declaring instance variable
+    String make;
+    String model;
+    short year;
+    int price;
+
+    Car(String make, String model, short year, int price){
+        //initialize the value with the help of constructor
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.price = price;
+
+    }
+//    for display
+    void Display(){
+        System.out.println("I want to buy " + make);
+        System.out.println("Model of the car is: "+ model);
+        System.out.println("Manufactured in "+ year);
+        System.out.println("Price of "+make+" is: "+ price);
+        System.out.println("");
+    }
+}
+class Main{
+    public static void main(String[] args) {
+        Car car = new Car("RollsRoyce", "Ghost", (short)2025, 69500000);
+        Car car2 = new Car("RollsRoyce", "Phantom", (short)2017, 104800000);
+        car.Display();
+        car2.Display();
+    }
+}
+//The object reference (car) is stored in the Stack memory and points to the real object in Heap.
