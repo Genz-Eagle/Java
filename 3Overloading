@@ -1,0 +1,53 @@
+package Session3;
+// Program of Method Overloading
+
+public class Calculator {
+    int sum ; // for integer addition result
+    double result;
+
+//    add() method with Two parameters
+    int add(int a, int b){
+        sum = a + b; //Update instance variable sum
+        return sum;
+    }
+
+//    add() method with Three parameters
+    int add(int x, int y, int z){
+        sum = x + y + z;// update instance variable sum
+        return sum;
+    }
+
+//    add() method with different Datatype
+    double add(double num1, double num2){
+        result = num1 + num2;
+        return result;
+    }
+//    For displaying their Integer Sum
+    void displayInt(){
+        System.out.println("Sum of number is: " + sum);
+    }
+//    For displaying Double sum
+    void displayDouble(){
+        System.out.println("Sum of number is: " + result);
+    }
+}
+ class amy{
+     public static void main(String[] args) {
+         Calculator cal = new Calculator();
+
+//         calling second method
+         cal.add(5, 7, 9);
+         cal.displayInt();
+
+//         calling Ist method
+         cal.add(33, 68);
+         cal.displayInt();
+
+//         calling third method
+//          double result =
+          cal.add(32.8, 7.3);
+          double result = cal.add(32.8, 7.3);
+          cal.displayDouble();
+//         System.out.println("Sum of double numbers is: " + result);
+     }
+ }
