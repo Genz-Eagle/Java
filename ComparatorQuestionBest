@@ -1,0 +1,54 @@
+import java.util.*;
+import java.util.Comparator;
+
+public class Student2 {
+    int rollno;
+    String name;
+
+    public Student2(int roll, String name){
+        this.rollno = roll;
+        this.name = name;
+    }
+    public String toString(){
+        return "rollno: "+ rollno +"name: "+ name;
+    }
+}
+
+class NameSort implements Comparator{
+    public int compare(Object obj1, Object obj2){
+        //typeCasting of object1 & object2
+        Student2 std1 = (Student2)obj1;
+        Student2 std2 = (Student2)obj2;
+        return (std1.name.compareTo(std2.name));
+    }
+
+}
+class RollSort implements Comparator{
+    public int compare(Object obj1, Object obj2){
+        //typeCasting of object1 & object2 to student
+        Student2 Std1 = (Student2)obj1;
+        Student2 Std2 = (Student2)obj2;
+        Integer r1 = Std1.rollno;
+        Integer r2 = Std2.rollno;
+        return r1.compareTo(r2);
+    }
+}
+
+class mkain{
+    public static void main(String[] args) {
+        Student2 std1 = new Student2(105, "Kiran");
+        Student2 std2 = new Student2(102, "Vikas");
+        Student2 std3 = new Student2(107, "Arun");
+        Student2 std4 = new Student2(108, "Riyan");
+        Student2 std5 = new Student2(103, "Ashu");
+
+        TreeSet<Student2> ts = new TreeSet<>(new NameSort());
+        ts.add(std1);
+        ts.add(std2);
+        ts.add(std3);
+        ts.add(std4);
+        ts.add(std5);
+//        Trees are already sorted so there is no Collection.sort() method
+        System.out.println(ts);
+        }
+}
