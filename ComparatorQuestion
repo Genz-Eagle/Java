@@ -1,0 +1,37 @@
+package Compare;
+import  java.util.*;
+
+class MySorting implements Comparator{
+    public int compare(Object obj1, Object obj2){
+//        Teacher std1 = (Teacher)obj1;
+//        Teacher std2 = (Teacher)obj2;
+        String s1 = obj1.toString();
+        String s2 = obj2.toString();
+        int len1 = s1.length();
+        int len2 = s2.length();
+
+        if(len1>len2){
+            return 1;
+        }
+        else if(len1<len2){
+            return -1;
+        }
+        else{
+            return s1.compareTo(s2);
+        }
+    }
+}
+public class Teacher{
+    public static void main(String[] args) {
+//        TreeSet<String> ts = new TreeSet<>();//[A, AA, AAAA, B, BB, BBB]
+        TreeSet<String> ts = new TreeSet<>(new MySorting());//[A, B, AA, BB, BBB, AAAA]
+        ts.add("AAAA");
+        ts.add("BB");
+        ts.add("A");
+        ts.add("BBB");
+        ts.add("AA");
+        ts.add("B");
+
+        System.out.println(ts);
+    }
+}
