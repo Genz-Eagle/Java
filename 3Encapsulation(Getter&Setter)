@@ -1,0 +1,54 @@
+package Session3;
+
+public class Student {
+    //Declare instance variables which are private
+    private String name;
+    private int age;
+    private String department;
+
+//    constructor for initializing the value
+    Student(String name, int age, String department){
+        this.name = name;
+        this.age = age;
+        this.department = department;
+    }
+//    Use getter and setter method bcz we cannot directly access the private data members outside the class.
+//    For Name
+    public void setname(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
+
+//    Getter and Setter method for - age
+    public void SetAge(int age){
+        this.age = age;
+    }
+    public int getAge(){
+        return age;
+    }
+
+//    Getter and Setter method for - department
+    public void setDepartment(String depart){
+        this.department = depart;
+    }
+    public String getDepartment(){
+        return department;
+    }
+
+    void display(){
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Department: " + department);
+    }
+}
+
+
+class MyMain{
+    public static void main(String[] args) {
+       Student student = new Student("Kiran Tihal", 21, "BCA");
+       student.display();
+       //The object reference(student) is stored in the stack memory, which points to the real object in Heap memory.
+    }
+}
