@@ -1,0 +1,50 @@
+package Compare;
+import java.util.*;
+import java.util.Comparator;
+
+class NameSort implements Comparator{
+//    we use raw data type wala comparator
+    public int compare(Object obj1, Object obj2){
+        Ctor str1 = (Ctor)obj1;
+        Ctor str2 = (Ctor)obj2;
+        return str1.name.compareTo(str2.name);
+    }
+
+}
+class RollSort implements Comparator{
+    public int compare(Object obj1, Object obj2){
+        Ctor std1 = (Ctor)obj1;
+        Ctor std2 = (Ctor)obj2;
+        Integer r1 = std1.roll;
+        Integer r2 = std2.roll;
+        return r1.compareTo(r2);
+    }
+}
+public class Ctor {
+    int roll;
+    String name;
+
+    public Ctor(String name, int roll){
+        this.name= name;
+        this.roll= roll;
+    }
+    public String toString(){
+        return name +" " + roll;
+    }
+
+    public static void main(String[] args) {
+        Ctor std1 = new Ctor("Kiran", 21);
+        Ctor std2 = new Ctor("Ankita", 35);
+        Ctor std3 = new Ctor("Purnima", 17);
+        Ctor std4 = new Ctor("Deepa", 19);
+        Ctor std5 = new Ctor("Archana", 20);
+
+        TreeSet<Ctor> ts = new TreeSet<>(new RollSort());
+        ts.add(std1);
+        ts.add(std2);
+        ts.add(std3);
+        ts.add(std4);
+        ts.add(std5);
+        System.out.println(ts);
+    }
+}
