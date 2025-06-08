@@ -1,0 +1,27 @@
+package JavaPackage;
+
+ class Sample{
+     int[] a={10,20,30};
+     int total=0;
+     void method(){
+         try{
+             total= a[0]+a[1]+a[2]+ a[3];
+             int result= total/0;
+         }
+         catch(ArithmeticException e){
+             System.out.println("Arithmetic");
+             System.out.println(e);
+         }
+         catch(ArrayIndexOutOfBoundsException a){
+             System.out.println("You are trying to access invalid index"+a);
+         }
+         System.out.println("Total Marks: "+ total);
+     }
+ }
+public class MultipleCatchBlock {
+    public static void main(String[] args) {
+        Sample obj = new Sample();
+        obj.method();
+    }
+}
+
