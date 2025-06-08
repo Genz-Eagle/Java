@@ -1,0 +1,47 @@
+package Generics;
+
+import java.util.ArrayList;
+
+public class Generics {
+    public static void main(String[] args) {
+//        String arr[] = new String[3];
+//
+//        arr[0]= "Kiran";
+//        arr[1]= 346;  /error becaus by default array is type safe
+//        arr[2]= "456";
+
+        ArrayList list = new ArrayList();
+        list.add("Arun");
+        list.add(123);
+        list.add(4.7f);
+
+        String name = (String)list.get(0);
+        System.out.println(list.get(0));
+
+        ArrayList<String> list2 = new ArrayList<>();
+        ArrayList<Integer> list3 = new ArrayList<>();
+
+        System.out.println(list2.getClass() == list3.getClass());   //this yu have to understand
+        System.out.println(list2.getClass());
+        System.out.println(list3.getClass());
+
+    }
+}
+
+class Bag<T extends Number>{
+
+    public T get(T var){
+        return var;
+    }
+}
+class mik{
+    public static void main(String[] args) {
+//        Generics.Bag<String> bag = new Generics.Bag();
+//        Object i = bag.get("kiran");
+//        Object b = bag.get("name");
+
+
+        Bag<Integer> bag2 = new Bag();
+         Object a = bag2.get(67);
+    }
+}
