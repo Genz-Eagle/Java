@@ -1,0 +1,21 @@
+//import java.util.function.Function;
+//
+//public class FunctionInterface {
+//    public static void main(String[] args) {
+//        Function<String, String> obj = (name) ->{
+//            return name.concat("Tihal");
+//        };
+//        System.out.println(obj.apply("Arun"));
+//    }
+//}
+
+import java.util.function.Function;
+public class FunctionInterface{
+    public static void main(String[] args) {
+        Function<String, String> obj = (name) ->  name.concat("Tihal");
+
+        System.out.println(obj.apply("Kiran"));
+    }
+
+}
+// In this we have only one abstract method which is apply().
