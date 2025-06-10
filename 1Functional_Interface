@@ -1,3 +1,6 @@
+//Lamda expression intoduced to support functional interface(FI), bcz FI only h've one abstract method  and to provide 
+//implementation part of the onle one(1) method we use lamda expression, calling default method with the help of instance,
+//calling Static method with the ClassName(here, interface).
 
 interface FunctionalInterface{
     void Something(); // But only one abstract method
