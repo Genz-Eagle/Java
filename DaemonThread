@@ -1,0 +1,18 @@
+package Multithreading;
+
+public class Test extends Thread{
+    public void run(){
+        System.out.println(Thread.currentThread().isDaemon()); //True
+        System.out.println("ChildThread "); //it may be print or not bcz main thread is finbished their working 
+   //jvm immediately terminate the daemon thread after finished the working of all the user thread
+// and main thread is immediately finshed their task, and daemon thread have no time to finished their task
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+        Test test = new Test();
+        test.setDaemon(true); 
+        test.start();
+    }
+}
