@@ -1,0 +1,21 @@
+package Multithreading;
+
+public class NumToPrint implements Runnable{
+    int num;
+    public NumToPrint(int num){
+      this.num = num;
+    }
+    public void run(){
+        System.out.println(num+ Thread.currentThread().getName());
+    }
+}
+class MkN {
+    public static void main(String[] args) {
+        NumToPrint np = new NumToPrint(7);
+        for(int i=1; i<=100;i++){
+        Thread th = new Thread(np);//one thread is created,again new thread is created, again& again10 thread
+
+        th.start();
+    }  
+  }
+}
