@@ -1,0 +1,32 @@
+package Multithreading;
+
+interface I1{
+    //no need public acces modifier for static, by default it is public
+    public static void Print(){
+        System.out.println("Static Method");
+    }
+    default void name(){
+        System.out.println("Default Method in interface");
+    }
+    public void Animal();
+}
+class Rollet implements I1{
+    public void Animal(){
+        System.out.println("Animal is a Abstarct method");
+    }
+    public void name(){
+        System.out.println("Override Default method");
+    }
+    public static void Print(){
+        System.out.println("Override Static method");
+    }// but can't work, bcz we cannot override static mtd.
+    //It belongs to class level mtd, it oautomatically called of parent class mtd
+}
+public class StaticDefaultMtd {
+    public static void main(String[] args) {
+        Rollet obj = new Rollet();
+        obj.name();
+        I1.Print();
+        obj.Print();//if yu want to call override static mtd then use object of the class
+    }
+}
