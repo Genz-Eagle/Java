@@ -1,0 +1,15 @@
+import java.util.function.Consumer;
+
+public class Cons {
+    public static void main(String[] args) {
+        Consumer<String> obj = (String str) ->{
+             str.concat("Kumar");
+        };
+        obj.accept("arun");
+//we cannot use sout bcz accept() method does not return any value
+    }
+}
+//test() mtd of predicate return boolean value
+//apply() mtd of Function return any(R) return value
+//accept() mtd --- does not return datatype --void--
+//get() mtd of Supplier functional interface which return any type of Object
