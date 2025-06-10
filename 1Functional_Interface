@@ -1,0 +1,24 @@
+
+interface FunctionalInterface{
+    void Something(); // But only one abstract method
+
+    default void Eat(){
+        System.out.println("Cake is for Eating");
+    }
+    static void sleep(){
+        System.out.println("Aman is sleeping");
+    }
+    //Multiple default method
+    //Multiple static method
+}
+
+public class Main2 {
+    public static void main(String[] args) {
+        FunctionalInterface obj = ()-> {
+            System.out.println("Tiger is Animal");
+        } ;
+        obj.Something();
+        obj.Eat();
+        FunctionalInterface.sleep();
+    }
+}
