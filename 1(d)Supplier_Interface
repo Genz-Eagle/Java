@@ -1,0 +1,20 @@
+//import java.util.function.Supplier;
+
+//public class Suppl {
+//    public static void main(String[] args) {
+//        Supplier<String> obj = () ->{
+//            return "Hello From Supplier";
+//        };
+//        System.out.println(obj.get());
+//    }
+//}
+
+import java.util.function.Supplier;
+
+public class Suppl {
+    public static void main(String[] args) {
+        Supplier<Integer> obj = () -> (int)(Math.random()*10);
+
+        System.out.println(obj.get());
+    }
+}
