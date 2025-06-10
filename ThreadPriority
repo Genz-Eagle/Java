@@ -1,0 +1,31 @@
+package Multithreading;
+
+class HighPriority extends Thread{
+    public void run(){
+        for(int i=0; i<=15; i++) {
+            System.out.println("heyy kiran!!! What are you doing");
+        }
+    }
+}
+class LowPriority extends Thread{
+    public void run(){
+        for(int i=1; i<=10; i++){
+            System.out.println("Eat");
+        }
+    }
+}
+public class ThreadPriority {
+    public static void main(String[] args) {
+
+        HighPriority th5 = new HighPriority();
+        LowPriority th0 = new LowPriority();
+
+        th0.setPriority(Thread.NORM_PRIORITY);
+        th5.setPriority(10);
+        System.out.println(th0.getPriority());
+
+        th0.start();
+        th5.start();
+
+    }
+}
